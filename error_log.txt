@@ -1,0 +1,9 @@
+1. React-Native server was not able to make post requests to Django/Python backend. 
+  The issue was solved with: https://stackoverflow.com/questions/63203051/how-to-access-django-local-server-data-with-react-native, specifically item #6 of the response. 
+  I had to ensure that my Django project was the same IP as my local network.  To solve this: I had to run my django server on the same ip address. For me that was with the following command: 
+    python manage.py runserver 192.168.1.154:8000.  
+
+    While this solved the issue, I then ran into another error that stated I needed to host the allowed hosts array within my settings.py. 
+    https://stackoverflow.com/questions/40582423/invalid-http-host-header
+
+    This solved the issue and I could make put requests. 
